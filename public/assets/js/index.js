@@ -90,6 +90,7 @@ const handleNoteDelete = (e) => {
   }
 
   deleteNote(noteId).then(() => {
+    //console.log("Deleted note, refreshing");
     getAndRenderNotes();
     renderActiveNote();
   });
@@ -99,6 +100,7 @@ const handleNoteDelete = (e) => {
 const handleNoteView = (e) => {
   e.preventDefault();
   activeNote = JSON.parse(e.target.parentElement.getAttribute('data-note'));
+  //console.log(activeNote);
   renderActiveNote();
 };
 
@@ -133,7 +135,9 @@ const renderNoteList = async (notes) => {
     const spanEl = document.createElement('span');
     spanEl.classList.add('list-item-title');
     spanEl.innerText = text;
-    spanEl.addEventListener('click', handleNoteView);
+    if( (text != 'No saved Notes') || (text === 'No saved Notes' && delBtn === true) ){
+      spanEl.addEventListener('click', handleNoteView);
+    }
 
     liEl.append(spanEl);
 
