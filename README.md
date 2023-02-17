@@ -43,5 +43,5 @@ Should you choose to host the application to a cloud host such as Heroku (which 
 ```md
 heroku login
 heroku create
-git push heroku master
+git push heroku main
 ```
