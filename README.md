@@ -36,6 +36,9 @@ From here you can view the application by following the address in your browser.
 Here is a video demonstrating how the program should run:
 
 
+https://user-images.githubusercontent.com/117125528/219518322-2902a543-5538-4361-a56f-66c1c0415692.mp4
+
+
 ## Deployment
 
 Should you choose to host the application to a cloud host such as Heroku (which was used here), run the following commands and then follow the instructions in your terminal:
