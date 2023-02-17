@@ -4,7 +4,7 @@ const fs = require('fs');
 const uuid = require('./helpers/uuid');
 const { readAndAppend, readFromFile, writeToFile } = require('./helpers/fsUtils');
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 const app = express();
 
@@ -45,9 +45,6 @@ app.post('/api/notes', (req, res) => {
         text,        
         id: uuid(),
       };
-  
-      // Convert the data to a string so we can save it
-      //const noteString = JSON.stringify(newNote);
   
       readAndAppend(newNote, './db/db.json');
   
